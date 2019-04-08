@@ -50,7 +50,7 @@ if(!$result['success']){
   echo($result['error']);
 } else{
   $payment_id = $result['payment_id'];
-  header('Location: ' . $result['payment_url']);
+  return redirect($result['payment_url']);
 }
 ```
 
