@@ -1,0 +1,25 @@
+{
+    "name": "kenvel/laravel-sberbank",
+    "type": "library",
+    "description": "Simple Tinkoff bank acquiring library.",
+    "keywords": [
+        "sberbank",
+        "acquiring"
+    ],
+    "homepage": "https://github.com/kenvel/laravel-sberbank",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Kenvel", 
+            "email": "dimult@yahoo.com",
+            "homepage": "https://github.com/kenvel/",
+            "role": "Developer"
+        }
+    ],    
+    "require": {
+        "php": "^7.1"
+    },
+    "autoload": {
+        "psr-4": { "Kenvel\\": "src" }
+    }
+}
