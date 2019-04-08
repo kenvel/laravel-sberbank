@@ -34,12 +34,12 @@ $sberbank = new Sberbank($acquiring_url, $access_token);
 ```php
 //Подготовка массива с данными об оплате
 $payment = [
-    'orderNumber'   => '1234567',
-    'amount'        => 100,
-    'language'      => 'ru',
-    'description'   => 'New payment',
-    'returnUrl'     => 'http://my.site/successful-payment',
-    'failUrl'       => 'http://my.site/fail-payment',
+    'orderNumber'   => '1234567',                           //Номер заказа
+    'amount'        => 100,                                 //Сумма заказа в рублях
+    'language'      => 'ru',                                //Локализация
+    'description'   => 'New payment',                       //Описание заказа
+    'returnUrl'     => 'http://my.site/successful-payment', //URL сайта в случае успешной оплаты
+    'failUrl'       => 'http://my.site/fail-payment',       //URL сайта в случае НЕуспешной оплаты
 ];
 
 //Получение url для оплаты
