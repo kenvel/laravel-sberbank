@@ -56,7 +56,14 @@ class Sberbank {
     public function paymentURL(array $data):array {        
         if ( !$this->paymentArrayChecked($data) ) {
             $this->error = 'Incomplete payment data';
-            return FALSE;
+            return [
+                'success'        => FALSE,
+                'error'          => $this->error,
+                'response'       => $this->response,
+                'payment_id'     => $this->payment_id,
+                'payment_url'    => $this->payment_url,
+                'payment_status' => $this->payment_status,
+            ];
         }
 
         $description_max_lenght = 24;
