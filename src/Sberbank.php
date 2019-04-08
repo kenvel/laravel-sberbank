@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Sberbank bank acquiring
+ * Sberbank acquiring
  *
- * Simple Sberbank bank acquiring library
+ * Simple Sberbank acquiring library
  * Based on https://securepayments.sberbank.ru/wiki/doku.php/integration:api:rest:start
  *
  * @link   https://github.com/kenvel/laravel-sberbank
@@ -14,10 +14,10 @@
 namespace Kenvel;
 
 class Sberbank {
-	private $acquiring_url;
+    private $acquiring_url;
     private $access_token;
 
-	private $url_init;
+    private $url_init;
     private $url_cancel;
     private $url_get_state;
 
@@ -34,11 +34,11 @@ class Sberbank {
      * @param string $acquiring_url like https://securepayments.sberbank.ru
      * @param string $access_token  secure token for sberbank
      */
-	public function __construct(string $acquiring_url, string $access_token) {
-		$this->acquiring_url = $acquiring_url;
-		$this->access_token  = $access_token;
+     public function __construct(string $acquiring_url, string $access_token) {
+	$this->acquiring_url = $acquiring_url;
+	$this->access_token  = $access_token;
         $this->setupUrls();
-    }
+     }
 
     /**
      * Generate Sberbank payment URL
@@ -108,7 +108,7 @@ class Sberbank {
      * @param  array  $data params
      * @return bool success or not
      */
-	private function sendRequest(string $path,  array $data) {
+    private function sendRequest(string $path,  array $data) {
         $data['token']    = $this->access_token;
         $data = \http_build_query($data, '', '&');
 
@@ -157,7 +157,7 @@ class Sberbank {
      * @return bool
      */
     private function errorsFound():bool {
-        $response = json_decode($this->response, TRUE);;
+        $response = json_decode($this->response, TRUE);
 
         if (isset($response['errorCode'])) {
             $error_code = (int) $response['errorCode'];
